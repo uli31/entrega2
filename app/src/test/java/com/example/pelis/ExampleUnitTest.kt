@@ -1,4 +1,4 @@
-package com.amaurypm.mvvmdm
+package com.example.pelis
 
 import org.junit.Test
 

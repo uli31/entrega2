@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MVVM DM"
+rootProject.name = "pelis"
 include(":app")

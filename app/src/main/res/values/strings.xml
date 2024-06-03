@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MVVM DM</string>
+    <string name="app_name">pelis</string>
+    <string name="descripcion_imagen_genero">Descripción de la imagen del género</string>
+
 </resources>

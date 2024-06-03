@@ -1,14 +1,14 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
-    namespace = "com.amaurypm.mvvmdm"
+    namespace = "com.example.pelis"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.amaurypm.mvvmdm"
+        applicationId = "com.example.pelis"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,10 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    buildFeatures{
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -46,16 +42,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
-    //ViewModel y LiveData
-    implementation (libs.androidx.lifecycle.viewmodel.ktx)
-    implementation (libs.androidx.lifecycle.livedata.core.ktx)
-
-    //Kotlin extensions para activities
-    implementation (libs.androidx.activity.ktx)
-
-    //Kotlin extensions para fragments
-    implementation (libs.androidx.fragment.ktx)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation ("androidx.room:room-runtime:2.4.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

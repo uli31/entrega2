@@ -10,17 +10,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MVVMDM"
+        android:theme="@style/Theme.Pelis"
         tools:targetApi="31">
+
         <activity
-            android:name=".ui.MainActivity"
+            android:name="MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Registro del proveedor de la base de datos SQLite -->
+        <provider
+            android:name="androidx.room.util.HiddenMethodCallsLogger"
+            android:authorities="${applicationId}.room.util.HiddenMethodCallsLogger"
+            android:exported="false"
+            tools:node="merge">
+        </provider>
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="${applicationId}.lifecycle-process"
+            android:exported="false"
+            tools:node="merge">
+        </provider>
+
     </application>
+
+    <!-- Permisos de almacenamiento -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
